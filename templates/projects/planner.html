@@ -1,0 +1,15 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block link_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/projectpage.css' %}">
+{% endblock %}
+{% block body_block %}
+<h1 class="title_h">{{ project_obj.title }}</h1>
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/rrms3N5WWLc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+  <p class="body_p">This is a project I created recently in order to improve my familiarity with Python as well as learn the GUI python library wxPython. I figured if I ever needed to create a GUI application in the future, I could use python with the wxPython library to make it. It is basically a scheduling/planning app that allows the schedule various plans they have for any day of the year. I designed it to be a basic version of the calender application you can find on most versions of Android.</p>
+  <img src="{% static 'pictures/planner.jpg' %}">
+  <p class="body_p">The program features a window in the center where the user can see all of their plans ordered along a time line for the current day which they have selected. The user can scroll through the time line of the current day to view all of the plans which are saved for that day. At the top there are several buttons for adding plans to the current day, removing plans from the current day and selecting the current day which the user is viewing. The user can also have multiple different planners representing multiple different sets of plans which could be useful if multiple different people are using the application.</p>
+<h2 class="subtitle_h">How it works:</h2>
+  <p class="body_p">The program is made using the Python programming language and the wxPython library for the graphical user interface. All of the code is contained in a single python file which contains several classes responsible for different functions within the program. For example, there is a class called Plan which represents a single plan within the application and contains information such as the start and end time of the plan, the date is is on, and text describing the plan. Another class PlannerFrame, represents the main window of the class and contains all of the buttons as well as the scrollable timeline window, which is itself represented with another class, PlannerWindow.  There are several other classses representing dialogs which prompt the user for information and all of the classes are linked together in a main class called Planner, which is responsible for the core logic of the program.</p>
+  <div class="download"><a href="{% static 'downloads/planner.zip' %}">DOWNLOAD</a></div>
+{% endblock %}

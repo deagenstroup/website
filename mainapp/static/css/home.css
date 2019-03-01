@@ -1,0 +1,8 @@
+.welcome {
+    margin: 5% 20% 20% 20%;
+    font-size: 50px;
+    border: 5px solid grey;
+    color: white;
+    background-color: black;
+    text-align: center;
+}

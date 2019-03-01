@@ -1,0 +1,70 @@
+html, body {
+	background-color: #e6e6ef;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.box {
+	display: flex;
+	flex-flow: column;
+	height: 100%;
+	/*border: 2px dotted black;*/
+}
+
+.box .header {
+	flex: 0 0 auto;
+	background-color: white;
+}
+
+.box .body {
+	flex: 1 0 auto;
+	/*border: 3px solid;*/
+	/*background-color: grey;*/
+	margin: 0 10% 0 10%;
+}
+
+#titlebox {
+	padding: 20px 30px 90px 30px;
+	width: 90%;
+	background-color: white;
+}
+
+#title {
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 50px;
+	color: black;
+	float: left;
+	overflow: auto;
+}
+
+#caption {
+	display: inline;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 35px;
+  text-transform: uppercase;
+	color: #71717c;
+  padding-top: 10px;
+	float: right;
+	overflow: auto;
+}
+
+.link_bar {
+	padding: 20px;
+	font-size: 35px;
+	color: black;
+}
+
+.links_box {
+	padding: 10px 0px 10px 0px;
+	background-color: #3030f2;
+}
+
+a.link_bar:hover, a.links_bar:active {
+	color: black;
+	background-color: grey;
+}
+
+a.link_bar:visited {
+	color: black;
+}

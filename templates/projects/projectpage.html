@@ -1,0 +1,13 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block link_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/projectpage.css' %}">
+{% endblock %}
+{% block body_block %}
+{% if project_obj %}
+	<p id=project_title>{{ project_obj.title }}</p>
+	<p id=project_body>{{ project_obj.body }}</p>
+{% else %}
+The project does not exist
+{% endif %}
+{% endblock %}

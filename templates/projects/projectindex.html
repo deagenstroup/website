@@ -1,0 +1,18 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block link_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/projectindex.css' %}">
+{% endblock %}
+{% block body_block %}
+{% if project_objs %}
+
+{% for project_obj in project_objs %}
+<div class="project_link">
+<a href="{% url 'projectpage' project_obj.name %}" class="project_link">{{project_obj.title}}<a> <br>
+<div class="subtext">{{project_obj.shortdesc}}</div>
+</div>
+{% endfor %}
+{% else %}
+There are no projects
+{% endif %}
+{% endblock %}

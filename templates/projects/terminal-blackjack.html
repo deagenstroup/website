@@ -1,0 +1,15 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block link_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/projectpage.css' %}">
+{% endblock %}
+{% block body_block %}
+<h1 class="title_h">{{ project_obj.title }}</h1>
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/NdMCrRs2xww" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+  <p class="body_p">This project is simply a version of the popular card game blackjack made to be completely text based. I wrote this program to gain a better understanding of C programming and the associated concepts that go with it (ie, pointers, memory allocation, less abstraction). The player starts out with a set amount of chips an can proceed to play hands of blackjack with those chips. The user plays against “the house” which follows a set of rules of play which is typical for a dealer at an actual blackjack table.</p>
+  <img src="{% static 'pictures/blackjack.jpg' %}">
+  <p class="body_p">The game is played in a loop of successive hands in which the player is first asked to place a bet on the hand. After the user places a bet, they are told what their hand is and what the dealer’s face up card is. After this they are given the option hit or stay. Just like in the card game, the user may hit as many times as they’d like as long as they do not go over and after they are done, the dealer shows his hand and proceeds to play it. If the user wins, they get back double their bet, but if the lose, they get nothing. The game continues until the user decides to quit.</p>
+<h2 class="subtitle_h">How it works:</h2>
+  <p class="body_p">The program is written in C and likewise the code follows an imperative design. Individual cards are represented with a data structure which contains the suit and a number specifying the actual card itself. An entire deck of cards is represented by a successive block of 52 individual card data structures and is referenced by a card pointer. There are functions for manipulating a deck of cards, involving removing a card from the deck or shuffling the deck. A hand, be it the dealer’s or the player’s, is also represented by a continuous series of card data structures in memory and is referenced with a card pointer. There are functions for getting the value of a hand and printing a hand to screen. The main logic of the game is written into the main function and handles dealing the hands, prompting the user, deciding what the dealer is going to do, and deciding the final winner.</p>
+  <div class="download"><a href="{% static 'downloads/blackjack.zip' %}">DOWNLOAD</a></div>
+{% endblock %}

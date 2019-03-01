@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<div class="box">
+		<div class="header">
+		<head>
+
+			{% load static %}
+			<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+			{% block link_block %} {% endblock %}
+
+			<style>{% block style_block %} {% endblock %}</style>
+
+			<title>Welcome to my programming site!</title>
+			
+			<div id=titlebox>
+				<span id=title>Deagen Stroup</span>
+				<span id=caption>Programmer</span>
+			</div>
+			<div style="clear: both;"></div>
+			
+			<div class="links_box">
+				<a class="link_bar" href="{% url 'home' %}">Home</a>|
+				<a class="link_bar" href="{% url 'projectindex' %}">Projects</a>|
+				<a class="link_bar" href="{% url 'about' %}">About</a>
+			</div>
+		</head>
+		</div>
+		
+		<div class="body">
+			<body>
+				{% block body_block %}
+				{% endblock %}
+			</body>
+		</div>
+	</div>
+</html>

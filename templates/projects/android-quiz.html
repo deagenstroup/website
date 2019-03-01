@@ -1,0 +1,25 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block link_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/projectpage.css' %}">
+{% endblock %}
+{% block style_block %}
+img {
+  max-width: 30%;
+}
+{% endblock %}
+{% block body_block %}
+<h1 class="title_h">{{ project_obj.title }}</h1>
+  <div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/QSzp-wyLH-s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+  <p class="body_p">I created this application after learning the basics of android application development, as a way to apply what I had learned. It is an application which allows the user to create and take multiple choice quizzes. In my many years in high school and college, I always thought one of the best ways to solidify some knowledge that I was studying was to quiz myself on the topic. I thought creating an application to do this would be a good idea, as the application would serve as a great studying tool.</p>
+  <img src="{% static 'pictures/quiz.jpg' %}">
+  <p class="body_p">The main screen presents buttons which provide the two main functions of the application, creating quizzes and taking quizzes. When a user is taking a quiz, the question and answers are all displayed as text on the screen and each answer is able to be selected by the user. Buttons at the top allow the user to  go through the questions and a submit button at the top allows the user to submit the quiz when they are finished. Upon finishing, the user is told how many questions they got correct and given a letter grade.</p>
+  <img src="{% static 'pictures/quiz_selection.jpg' %}">
+  <p class="body_p">If the user selects the edit quizzes button at the main menu, they are taken to a screen which allows them to select a quiz to edit, delete a quiz, rename a quiz, or create a new quiz. When in edit mode, the user has various buttons at the top which allow the user to add or delete questions from the quiz, add or delete answers from the current question, set the correct answer for the current question, scroll through the questions, and save the quiz. If the user presses the text of an answer, they are able to edit the text of the answer.</p>
+  <img src="{% static 'pictures/quiz_edit.jpg' %}">
+<h2 class="subtitle_h">How it works:</h2>
+  <p class="body_p">The main functionality of the program is dictated by four Activity classes. The MainActivity class contains the code which is responsible for the main menu and handles calls from the buttons declared in the activity’s layout document. The layout contains two buttons which make calls to the MainActivity which launch either the QuizActivity or the EditActivity after calling the SelectionActivity to determine which quiz is going to be involved.</p>
+  <p class="body_p">The QuizActivity is the activity responsible for running the quiz when the user is taking a quiz. A class called Quiz is responsible for storing information about the quiz itself, including all of the questions in the quiz, the current question, and the filename of the file which the quiz is saved to. The Quiz class also contains methods for accessesing and modifying this data, as well as reading and writing it from file and grading the quiz. Each question in a Quiz is represented with a Question object, which contains information such as the text of the question, a list of possible answers, the correct answer among that list, and all of the necessary GUI objects to represent the question in the GUI.</p>
+  <p class="body_p">The EditActivity dictates how the editing feature of the application works. The EditActivity allows the user to edit a quiz, and contains methods which mostly make calls to methods of the Quiz and Question classes, manipulating the data in objects of those classes in different ways, allowing the user to modify questions, modify answers, and change the correct answer, among various other things. The SelectionActivity is responsible for reading all of the quizzes available from file and allowing the user to select one as well as manipulate them in various ways. The layout document contains multiple buttons which make calls to methods inside the SelectionActivity in order to delete, rename, or create a new quiz.</p>
+  <div class="download"><a href="{% static 'downloads/blackjack.zip' %}">DOWNLOAD</a></div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block link_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/projectpage.css' %}">
+{% endblock %}
+{% block body_block %}
+<h1 class="title_h">{{ project_obj.title }}</h1>
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/Inx7Ze22f_k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p class="body_p">This project is something I did in high school when I was first becoming decent at programming and was one of the larger projects I had done up until that point. Essentially, I made a duplicate of the game Tetris with Java and the Java Swing GUI library.</p>
+<img src="{% static 'pictures/tetris_gameplay.jpg' %}">
+<p class="body_p">I tried to make the core gameplay as close to the original as possible. For those of you who are unfamiliar with the game, I will give a quick overview. The game is played within a grid of squares in which pieces fall from the top to the bottom. When the pieces touch the bottom, they stop and another piece appears at the top of the grid. When all of the squares in a single horizontal line are filled, the line clears out and the player scores points. The goal of the game is to clear as many lines and score as many points as possible before the entire grid fills up with blocks.</p>
+<img src="{% static 'pictures/tetris_menu.jpg' %}">
+<p class="body_p">The program has a main menu where the user can do multiple different things related to the game. The user can choose to play the game, in which a new instance of the game will be launched. The user can also check a list of high scores for the game. The controls of the game can also be remapped to different keys, so the user can choose what key scheme they would like, similar to most PC games. Finally the user can adjust the dimensions of the window in which the game runs.</p>
+<h2 class="subtitle_h">How it works:</h2>
+<p class="body_p">I created this program using the Java programming language and used Java’s swing library to handle all of the GUI components, including the buttons and dialogs for the main menu and the drawing of the actual visual components to the screen.</p>
+<p class="body_p">The window in which the main menu runs is an extension of the JFrame class, a class in the Java swing library which is used to represent windows. The top level window contains a series of JButtons which when pressed, remove all of the things from the window and replace them with their respective Jpanels. Each sub menu (high score, options, controls) has its own panel object that is put inside the main window. </p>
+<p class="body_p">When the user presses the Play button, the game launches, the window is cleared and replaced with two Jpanels which represent the games grid and a side panel displaying info about the game. The game is contained in a class called TetrisInstance, which is responsible for the main game loop and logic, including spawning blocks, keeping track of score, clearing lines, and moving blocks down the grid. This class is also responsible for user input from the keyboard. There are various other classes which control the sub functions of components in the game. A class called Tgrid keeps track of blocks within the grid and has methods for figuring out if a line is cleared, if a coordinate is occupied or if a coordinate is valid. Each block is represented by a separate block object and the display of the grid containing the blocks is handled by a separate class. </p>
+<div class="download">
+<a href="{% static 'downloads/tetris.zip' %}">DOWNLOAD</a>
+</div>
+{% endblock %}

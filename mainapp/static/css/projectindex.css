@@ -1,0 +1,18 @@
+.project_link, a.project_link:visited {
+	padding: 50px 100px 0px 30px;
+}
+a.project_link, a.project_link:visited {
+  font-family: Impact, Charcoal, sans-serif;
+	font-size: 45px;
+	color: #3030f2;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.subtext {
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 25px;
+  color: #71717c;
+  text-decoration: lowercase;
+  padding-left: 30px;
+}
