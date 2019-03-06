@@ -8,8 +8,8 @@
 
 {% for project_obj in project_objs %}
 <div class="project_link">
-<a href="{% url 'projectpage' project_obj.name %}" class="project_link">{{project_obj.title}}<a> <br>
-<div class="subtext">{{project_obj.shortdesc}}</div>
+    <a href="{% url 'projectpage' project_obj.name %}" class="project_link">{{project_obj.title}}<a><br>
+        <div class="subtext">{{project_obj.shortdesc}}</div>
 </div>
 {% endfor %}
 {% else %}
