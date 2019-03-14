@@ -8,14 +8,20 @@
 }
 
 .linkbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: space-between;
     margin: 5% 0 5% 0;
+    padding: 5% 0 5% 0;
     border: 3px solid black;
     background-color: #3030f2;
-    text-align: center;
 }
 
 a.box_link, a.box_link:visited {
-    font-size: 35px;
+    flex-grow: 0;
+    font-size: 45px;
     color: black;
     text-decoration: none;
 }

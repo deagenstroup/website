@@ -49,22 +49,35 @@ html, body {
 	overflow: auto;
 }
 
-.link_bar {
-	padding: 20px;
-	font-size: 35px;
-	color: black;
-}
-
-.links_box {
-	padding: 10px 0px 10px 0px;
+.nav_box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
 	background-color: #3030f2;
 }
 
-a.link_bar:hover, a.links_bar:active {
+.nav_link {
+    margin: 15px;
+    text-decoration: none;
+    font-size: 35px;
+    color: black;
+}
+
+a.nav_link:hover, a.nav_link:active {
+    text-decoration: underline;
+}
+
+a.nav_link:visited {
+    color: black;
+}
+
+/*a.link_bar:hover, a.links_bar:active {
+  padding: 10px 10px 10px 10px;
 	color: black;
 	background-color: grey;
 }
 
 a.link_bar:visited {
 	color: black;
-}
+}*/
