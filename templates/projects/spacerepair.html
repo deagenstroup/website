@@ -1,0 +1,28 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block link_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/projectpage.css' %}">
+{% endblock %}
+
+{% block body_block %}
+<h1 class="title_h">{{ project_obj.title }}</h1>
+
+    <div align="center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/z5SEyNeAQ9U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <p class="body_p">This is a small game I made using Java and the Lightweight Java Game Library. It is a top down game where the player controls a astronaut tasked with repairing various modules on a space station. The modules become damaged and the player must move around the level and repair them. The modules get damaged at a faster rate as the game progresses and the goal is to last as long as possible.</p>
+
+    <img src="{% static 'pictures/space_menu.png' %}">
+
+<h2 class="subtitle_h">Gameplay</h2>
+    <p class="body_p">The player controls a small astronaut and can move them around the screen with the WASD keys. The player can move the mouse to control which part of the level is visible. There are modules located all around the map that are failing and need to be repaired. Modules are randomly hit by asteriods, resulting in the module's health going down a random amount.The player can repair each module by moving the astronaut close to the module and holding the space button. Once a module reaches zero health, it is destoyed. The goal of the game is to keep the modules running for as long as possible. Once the last module is destroyed, the game is over.</p>
+    <img src="{% static 'pictures/space_gameplay.png' %}">
+    <p class="body_p">There are several powerups which appear and upon picking up, grant the user temporary advantages. The yellow powerup grants increased vision, the blue powerup increased repair speed, the red powerup increased move speed, and the purple powerup automatically repairs a random damaged module.</p>
+
+<h3 class="subtitle_h">Level Editor</h3>
+    <p class="body_p">The game also features a level editor that allows the user to create their own levels. The user can right click the mouse to spawn an object where the mouse is and can drag and hold to create box objects. By clicking on an object and moving the mouse, the user can drag the object around. Box objects can also have their size adjusted by dragging the sides or corners of the box. Depending on what mode the user is in, right clicking will spawn different objects. The user can switch between modes by pressing the relative number keys on the keyboard, ie the 1 number key for mode 1.</p>
+    <img src="{% static 'pictures/space_editor.png' %}">
+
+{% endblock %}
